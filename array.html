@@ -41,6 +41,7 @@ $(document).ready(function () {
 	$(".inputEmail").each(function(){
 	if ($(this).val() != "") {
 	array1.push($(this).val());
+        array1.sort();
 	}
 	});
    array.push(array1);
