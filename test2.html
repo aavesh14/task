@@ -43,22 +43,26 @@ $(document).ready(function () {
 	array1.push($(this).val());
        }
 	});
-       function bubbleSort(sortnum) {
-     for(var i = 1; i < sortnum.length; i += 1)
+
+  
+    var sorts = bubbleSort(array1);
+    array.push(sorts);
+	console.log(sorts);
+	});
+	 function bubbleSort(sortnum) {
+	  for (var j = 0; j < sortnum.length; j++)
+	  {
+		for(var i = 1; i <= sortnum.length; i++)
         {
         if (sortnum[i -1] > sortnum[i]){
         var tmp = sortnum[i -1];
-        sortnum[i -1] = array1[i];
+        sortnum[i -1] = sortnum[i];
         sortnum[i] = tmp;
         }
         }
+		}
     return sortnum;
   }
-  
-       bubbleSort(array1);
-        array.push(array1);
-	console.log(array);
-	});
 }); 
 
 </script>
