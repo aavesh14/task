@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Logic</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+
+        <div class="form-group mr-1">
+
+            <input type="text" id="1" class="inputEmail">
+        </div>
+        <div class="form-group mr-1">
+
+            <input type="text" id="2" class="inputEmail">
+        </div>
+        <div class="form-group mr-1">        
+            <input type="text" id="3" class="inputEmail">
+        </div>
+        <div class="form-group mr-1">        
+            <input type="text" id="4" class="inputEmail">
+        </div>
+        
+        <button id="button1" class="btn btn-primary">Submit</button>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+	var array = [];
+	$("#button1").click(function(){
+	//alert("test");
+		let array1 = [];
+	$(".inputEmail").each(function(){
+	if ($(this).val() != "") {
+	array1.push($(this).val());
+       }
+	});
+       function bubbleSort(sortnum) {
+     for(var i = 1; i < sortnum.length; i += 1)
+        {
+        if (sortnum[i -1] > sortnum[i]){
+        var tmp = sortnum[i -1];
+        sortnum[i -1] = array1[i];
+        sortnum[i] = tmp;
+        }
+        }
+    return sortnum;
+  }
+  
+       bubbleSort(array1);
+        array.push(array1);
+	console.log(array);
+	});
+}); 
+
+</script>
+</body>
+</html>
+
+
+
+ 
+
+
