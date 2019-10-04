@@ -44,7 +44,7 @@ $(document).ready(function () {
        }
 	});
 
-  
+    var uni = uniques(array1);
     var sorts = bubbleSort(array1);
     array.push(sorts);
 	console.log(sorts);
@@ -52,9 +52,9 @@ $(document).ready(function () {
 	 function bubbleSort(sortnum) {
 	  for (var j = 0; j < sortnum.length; j++)
 	  {
-		for(var i = 1; i < sortnum.length; i++)
+		for(var i = 0; i < sortnum.length-1; i++)
         {
-        if (sortnum[i] > sortnum[i+1]){
+        if (parseInt(sortnum[i]) > parseInt(sortnum[i+1])){
         var tmp = sortnum[i];
         sortnum[i] = sortnum[i+1];
         sortnum[i+1] = tmp;
@@ -62,6 +62,20 @@ $(document).ready(function () {
         }
 		}
     return sortnum;
+  }
+  function uniques(uniquenum){
+    let tmp_array = [];
+  for (var j = 0; j < uniquenum.length; j++)
+	  {
+		for(var i = 1; i < uniquenum.length-1; i++)
+        {
+        if (parseInt(uniquenum[j]) == parseInt(uniquenum[i])){
+        
+        }
+		
+        }
+		//tmp_array.push(uniquenum[i]);
+		}
   }
 }); 
 
