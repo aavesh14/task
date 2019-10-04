@@ -52,12 +52,12 @@ $(document).ready(function () {
 	 function bubbleSort(sortnum) {
 	  for (var j = 0; j < sortnum.length; j++)
 	  {
-		for(var i = 1; i <= sortnum.length; i++)
+		for(var i = 1; i < sortnum.length; i++)
         {
-        if (sortnum[i -1] > sortnum[i]){
-        var tmp = sortnum[i -1];
-        sortnum[i -1] = sortnum[i];
-        sortnum[i] = tmp;
+        if (sortnum[i] > sortnum[i+1]){
+        var tmp = sortnum[i];
+        sortnum[i] = sortnum[i+1];
+        sortnum[i+1] = tmp;
         }
         }
 		}
