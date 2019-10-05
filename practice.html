@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Logic</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+
+        <div class="form-group mr-1">
+
+            <input type="text" id="1" class="inputEmail">
+        </div>
+        <div class="form-group mr-1">
+
+            <input type="text" id="2" class="inputEmail">
+        </div>
+        <div class="form-group mr-1">        
+            <input type="text" id="3" class="inputEmail">
+        </div>
+        <div class="form-group mr-1">        
+            <input type="text" id="4" class="inputEmail">
+        </div>
+        
+        <button id="button1" class="btn btn-primary">Submit</button>
+
+
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+	var array = [];
+	$("#button1").click(function(){
+	//alert("test");
+		let array1 = [];
+	$(".inputEmail").each(function(){
+	if ($(this).val() != "") {
+	array1.push($(this).val());
+       }
+	});
+
+    var uni = uniques(array1);
+    var sorts = bubbleSort(uni);
+    array.push(sorts);
+	console.log(sorts);
+	});
+	 function bubbleSort(sortnum) {
+	  for (var j = 0; j < sortnum.length; j++)
+	  {
+		for(var i = 0; i < sortnum.length-1; i++)
+        {
+        if (parseInt(sortnum[i]) > parseInt(sortnum[i+1])){
+        var tmp = sortnum[i];
+        sortnum[i] = sortnum[i+1];
+        sortnum[i+1] = tmp;
+        }
+        }
+		}
+    return sortnum;
+  }
+  function uniques(uniquenum){
+    let tmp_array = [];
+    var start = false;
+    var count = 0;
+  for (var j = 0; j < uniquenum.length; j++)
+	  {
+  for(var i = 0; i < tmp_array.length; i++)
+        {
+        if (parseInt(uniquenum[j]) == parseInt(tmp_array[i]))
+        {
+                    start = true;
+        }
+        }
+      count++
+     if (count == 1 && start == false){
+	tmp_array.push(uniquenum[j]);
+        }
+     start = false;
+     count = 0;
+		}
+  return tmp_array;
+
+  }
+
+}); 
+
+</script>
+</body>
+</html>
+
+
+
+ 
+
+
