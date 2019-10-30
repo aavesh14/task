@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lan="en">
+
+<head>
+
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        function doHomework(subject, callback) {
+            console.log(`Starting my ${subject} homework.`);
+            callback();
+        }
+        doHomework('math', function alertFinished() {
+            console.log('Finished my homework');
+        });
+        // var p1 = new Promise((resolve, reject) => {
+        //    // resolve('!sucess');
+        //    reject('rerere');
+        // });
+        // p1.then (value => {console.log(value);},reason => {console.log(reason);})
+        var aavesh = new Promise((resolve, reject) => {
+         //   resolve ('pushkar');
+            resolve ('hemant');
+        });
+        aavesh.then (value => {console.log(value);}, reason => {console.log(reason);});
+    </script>
+</body>
+
+</html>
